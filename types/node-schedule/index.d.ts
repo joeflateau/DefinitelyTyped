@@ -185,7 +185,7 @@ export class Invocation {
  * @param rule     scheduling info
  * @param callback callback to be executed on each invocation
  */
-export function scheduleJob(name: string, rule: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string | number, callback: JobCallback): Job;
+export function scheduleJob(name: string, rule: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string | number, callback: JobCallback): Job | null;
 
 /**
  * Create a schedule job.
@@ -193,7 +193,7 @@ export function scheduleJob(name: string, rule: RecurrenceRule | RecurrenceSpecD
  * @param rule     scheduling info
  * @param callback callback to be executed on each invocation
  */
-export function scheduleJob(rule: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string | number, callback: JobCallback): Job;
+export function scheduleJob(rule: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string | number, callback: JobCallback): Job | null;
 
 /**
  * Changes the timing of a Job, canceling all pending invocations.
@@ -201,7 +201,7 @@ export function scheduleJob(rule: RecurrenceRule | RecurrenceSpecDateRange | Rec
  * @param spec The new timing for this Job.
  * @return if the job could be rescheduled, {null} otherwise.
  */
-export function rescheduleJob(job: Job | string, spec: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string): Job;
+export function rescheduleJob(job: Job | string, spec: RecurrenceRule | RecurrenceSpecDateRange | RecurrenceSpecObjLit | Date | string): Job | null;
 
 /** Dictionary of all Jobs, accessible by name. */
 export let scheduledJobs: {[jobName: string]: Job};
